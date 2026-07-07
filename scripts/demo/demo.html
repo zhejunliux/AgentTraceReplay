@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  html, body { margin: 0; padding: 0; background: #0a0e14; }
+  #stage { width: 660px; height: 360px; }
+  svg { display: block; }
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- 2x the in-app viewBox (330x180 -> 660x360) for a crisp GIF. Values below
+       are authored in the 330x180 coordinate space; the outer scale handles 2x. -->
+  <svg width="660" height="360" viewBox="0 0 330 180" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="330" height="180" fill="#0a0e14"/>
+
+    <!-- lane baselines + labels -->
+    <g>
+      <line x1="34" y1="52" x2="300" y2="52" stroke="#4ade80" stroke-opacity="0.14" stroke-width="2"/>
+      <text x="6" y="55" fill="#4ade80" fill-opacity="0.7" font-size="7" font-weight="600" letter-spacing="0.5">THINK</text>
+      <line x1="34" y1="96" x2="300" y2="96" stroke="#38bdf8" stroke-opacity="0.14" stroke-width="2"/>
+      <text x="6" y="99" fill="#38bdf8" fill-opacity="0.7" font-size="7" font-weight="600" letter-spacing="0.5">TOOL</text>
+      <line x1="34" y1="140" x2="300" y2="140" stroke="#c084fc" stroke-opacity="0.14" stroke-width="2"/>
+      <text x="6" y="143" fill="#c084fc" fill-opacity="0.7" font-size="7" font-weight="600" letter-spacing="0.5">AGENT</text>
+    </g>
+
+    <!-- THINK progress overlay -->
+    <line x1="34" y1="52" x2="34" y2="52" stroke="#4ade80" stroke-opacity="0.55" stroke-width="2">
+      <animate attributeName="x2" values="34;300" dur="6.5s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- feeder branches (parent THINK -> child), light up as playhead passes -->
+    <!-- x=96 tool -->
+    <path d="M 96 52 C 96 74, 96 74, 96 96" stroke="#38bdf8" stroke-width="1.5" fill="none" stroke-opacity="0.1">
+      <animate attributeName="stroke-opacity" values="0.1;0.1;1;1" keyTimes="0;0.233;0.253;1" dur="6.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- x=156 failed tool -->
+    <path d="M 156 52 C 156 74, 156 74, 156 96" stroke="#f87171" stroke-width="1.5" fill="none" stroke-opacity="0.1">
+      <animate attributeName="stroke-opacity" values="0.1;0.1;1;1" keyTimes="0;0.459;0.479;1" dur="6.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- x=210 tool -->
+    <path d="M 210 52 C 210 74, 210 74, 210 96" stroke="#38bdf8" stroke-width="1.5" fill="none" stroke-opacity="0.1">
+      <animate attributeName="stroke-opacity" values="0.1;0.1;1;1" keyTimes="0;0.662;0.682;1" dur="6.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- x=264 agent -->
+    <path d="M 264 52 C 264 96, 264 96, 264 140" stroke="#c084fc" stroke-width="1.5" fill="none" stroke-opacity="0.1">
+      <animate attributeName="stroke-opacity" values="0.1;0.1;1;1" keyTimes="0;0.865;0.885;1" dur="6.5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- nodes: THINK line -->
+    <circle cx="42" cy="52" r="4.5" fill="#4ade80" stroke="#4ade80" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.030;0.050;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="96" cy="52" r="4.5" fill="#4ade80" stroke="#4ade80" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.233;0.253;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="156" cy="52" r="4.5" fill="#4ade80" stroke="#4ade80" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.459;0.479;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="210" cy="52" r="4.5" fill="#4ade80" stroke="#4ade80" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.662;0.682;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="264" cy="52" r="4.5" fill="#4ade80" stroke="#4ade80" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.865;0.885;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- nodes: TOOL line -->
+    <circle cx="96" cy="96" r="4.5" fill="#38bdf8" stroke="#38bdf8" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.233;0.253;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- failed tool node @156 with pulse ring + ! -->
+    <circle cx="156" cy="96" r="6" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.7;0" keyTimes="0;0.459;0.479;1" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="6;6;11;6" keyTimes="0;0.459;0.479;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="156" cy="96" r="4.5" fill="#f87171" stroke="#f87171" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.459;0.479;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="156" y="98.5" font-size="6" font-weight="700" text-anchor="middle" fill="#0a0e14" opacity="0">!
+      <animate attributeName="opacity" values="0.18;0.18;1;1" keyTimes="0;0.459;0.479;1" dur="6.5s" repeatCount="indefinite"/>
+    </text>
+
+    <circle cx="210" cy="96" r="4.5" fill="#38bdf8" stroke="#38bdf8" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.662;0.682;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- node: AGENT line -->
+    <circle cx="264" cy="140" r="4.5" fill="#c084fc" stroke="#c084fc" stroke-width="1.5" fill-opacity="0.18">
+      <animate attributeName="fill-opacity" values="0.18;0.18;1;1" keyTimes="0;0.865;0.885;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- playhead -->
+    <line x1="34" y1="30" x2="34" y2="162" stroke="#e2e8f0" stroke-opacity="0.6" stroke-width="1">
+      <animate attributeName="x1" values="34;300" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="34;300" dur="6.5s" repeatCount="indefinite"/>
+    </line>
+    <polygon points="30,26 38,26 34,32" fill="#e2e8f0" fill-opacity="0.75">
+      <animateTransform attributeName="transform" type="translate" values="0 0;266 0" dur="6.5s" repeatCount="indefinite"/>
+    </polygon>
+
+    <!-- caption -->
+    <text x="34" y="18" fill="#5b6a7d" font-size="8" font-weight="600">AgentTraceReplay — replay an agent run like a video</text>
+  </svg>
+</div>
+<script>
+  // Frame-accurate capture: pause the SMIL clock and seek to ?t=<seconds> so
+  // each headless-Chrome screenshot renders a deterministic frame. Without a
+  // ?t= param the animation just plays normally (handy for eyeballing it).
+  const params = new URLSearchParams(location.search)
+  const t = params.get('t')
+  if (t !== null) {
+    const svg = document.querySelector('svg')
+    svg.pauseAnimations()
+    svg.setCurrentTime(parseFloat(t))
+  }
+</script>
+</body>
+</html>

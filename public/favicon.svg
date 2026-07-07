@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#0a0e14"/>
+  <!-- timeline track -->
+  <line x1="12" y1="32" x2="52" y2="32" stroke="#1c2532" stroke-width="4" stroke-linecap="round"/>
+  <!-- branch down to a tool node -->
+  <path d="M32 32 V44" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- nodes on the main line -->
+  <circle cx="16" cy="32" r="5" fill="#c084fc"/>
+  <circle cx="32" cy="32" r="6" fill="#4ade80"/>
+  <!-- tool node on the branch -->
+  <circle cx="32" cy="46" r="5" fill="#38bdf8"/>
+  <!-- play head at the end -->
+  <path d="M46 26 L54 32 L46 38 Z" fill="#4ade80"/>
+</svg>

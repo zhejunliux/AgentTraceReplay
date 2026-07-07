@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0a0e14;
+  color: #cdd6e0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* subtle scanline / grid vibe on the timeline surface */
+.scanlines {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 3px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2532;
+  border-radius: 4px;
+}

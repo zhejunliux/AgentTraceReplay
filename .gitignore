@@ -1,0 +1,10 @@
+node_modules
+dist
+*.local
+.DS_Store
+.vite
+*.tsbuildinfo
+
+# Local Claude Code config — keep the shared skills/, not personal settings.
+.claude/settings.json
+.claude/settings.local.json
