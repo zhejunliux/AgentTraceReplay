@@ -15,11 +15,12 @@ fail, and recover — step by step, on a scrubbable timeline.
 
 <br />
 
-[![License](https://img.shields.io/badge/license-Apache--2.0-4ade80?style=flat-square)](./LICENSE)
+[![License](https://img.shields.io/github/license/zhejunliux/AgentTraceReplay?color=4ade80&style=flat-square)](./LICENSE)
+[![Live demo](https://img.shields.io/badge/demo-live-4ade80?style=flat-square)](https://zhejunliux.github.io/AgentTraceReplay/)
 [![Runs in browser](https://img.shields.io/badge/runs-100%25%20in%20browser-38bdf8?style=flat-square)](#privacy)
 [![No upload](https://img.shields.io/badge/data-never%20leaves%20the%20page-c084fc?style=flat-square)](#privacy)
 
-<samp>[Quick start](#quick-start) · [Formats](#input-formats) · [Convert a run](#convert-your-run) · [Extend](#adding-a-format) · [Skills](#claude-code-skills) · [Privacy](#privacy)</samp>
+<samp>[Live demo](https://zhejunliux.github.io/AgentTraceReplay/) · [Quick start](#quick-start) · [Formats](#input-formats) · [Convert a run](#convert-your-run) · [Extend](#adding-a-format) · [Skills](#claude-code-skills) · [Privacy](#privacy)</samp>
 
 **English** · [中文](./README.zh-CN.md)
 

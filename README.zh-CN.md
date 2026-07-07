@@ -15,11 +15,12 @@ Agent 如何思考、调用工具、失败、再恢复。
 
 <br />
 
-[![License](https://img.shields.io/badge/license-Apache--2.0-4ade80?style=flat-square)](./LICENSE)
+[![License](https://img.shields.io/github/license/zhejunliux/AgentTraceReplay?color=4ade80&style=flat-square)](./LICENSE)
+[![在线体验](https://img.shields.io/badge/demo-在线体验-4ade80?style=flat-square)](https://zhejunliux.github.io/AgentTraceReplay/)
 [![纯浏览器运行](https://img.shields.io/badge/运行-100%25%20浏览器本地-38bdf8?style=flat-square)](#隐私)
 [![无上传](https://img.shields.io/badge/数据-永不离开页面-c084fc?style=flat-square)](#隐私)
 
-<samp>[快速开始](#快速开始) · [支持格式](#支持的输入格式) · [转换数据](#转换你的运行数据) · [扩展](#新增一种格式) · [Skills](#claude-code-skills) · [隐私](#隐私)</samp>
+<samp>[在线体验](https://zhejunliux.github.io/AgentTraceReplay/) · [快速开始](#快速开始) · [支持格式](#支持的输入格式) · [转换数据](#转换你的运行数据) · [扩展](#新增一种格式) · [Skills](#claude-code-skills) · [隐私](#隐私)</samp>
 
 [English](./README.md) · **中文**
 
